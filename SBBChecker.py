@@ -23,8 +23,8 @@ def get_request(ip, socket_family):
 
 
 def check_website(url):
-    website_ipv4 = socket.getaddrinfo(host=url, port=80, family=socket.AddressFamily.AF_INET)[0][4][0]
-    website__ipv6 = socket.getaddrinfo(host=url, port=80, family=socket.AddressFamily.AF_INET6)[0][4][0]
+    website_ipv4 = socket.getaddrinfo(host=url, port=443, family=socket.AddressFamily.AF_INET)[0][4][0]
+    website__ipv6 = socket.getaddrinfo(host=url, port=443, family=socket.AddressFamily.AF_INET6)[0][4][0]
     print("Trying for " + url + ".ipv4 - " + website_ipv4)
     print(get_request(website_ipv4, socket.AF_INET))
     print("\n")
@@ -36,4 +36,3 @@ def check_website(url):
 if __name__ == '__main__':
     check_website("www.google.ch")
     check_website("www.sbb.ch")
-
